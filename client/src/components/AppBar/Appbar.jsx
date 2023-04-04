@@ -16,6 +16,7 @@ const Appbar = () => {
   }
   const logout = () => {
     dispatch({ type: 'LOGOUT' })
+    dispatch({type:'LOG_OUT'})
     setUser(null)
     gotohome();
   }
@@ -34,7 +35,7 @@ const Appbar = () => {
               user!=null &&
               <div className='user'>
                 <div className='nameApp'>
-                  {user.result.name}
+                  {user?.result?.name}
                 </div>
                 <div className='logout'>
                   <button onClick={logout}>

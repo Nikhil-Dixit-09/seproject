@@ -21,3 +21,11 @@ export const signup=(formData,navigate)=>async(dispatch)=>{
         console.log(error)
     }
 }
+export const addstock=(stockdata)=>async(dispatch)=>{
+    try{
+        const {data}=await api.addstock(stockdata);
+        console.log(data);
+    }catch(err){
+        console.log(err);
+    }
+}

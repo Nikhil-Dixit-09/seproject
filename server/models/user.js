@@ -6,7 +6,12 @@ const userSchema=mongoose.Schema({
     password:{type:String,required:true},
     id:{type:String},
     adharCard:{type:String,required:true},
-    panCard:{type:String,required:true}
+    panCard:{type:String,required:true},
+    balance:{type:Number,required:true},
+    stocks:[{
+        name:String,
+        value:Number
+    }]
 })
 const User=mongoose.model('User',userSchema);
 module.exports=User;

@@ -1,0 +1,26 @@
+.ele{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 200px;
+    border: 2px solid rgb(224, 255, 255);
+    text-align: center;
+    
+    padding: 5px;
+}
+.content1{
+    font-size: 17px;
+    font-family: Roboto,system-ui;
+    color: var(--text130);
+    letter-spacing: .3px;
+    font-weight: 350;
+    -webkit-font-smoothing: auto;
+    margin: 0;
+}
