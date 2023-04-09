@@ -11,6 +11,8 @@ const Portfolio = (props) => {
             break
         }
     }
+    const show=props.quantity*pric;
+    
   return (
     <div className='ele'>
         <div className='content1'>
@@ -23,7 +25,7 @@ const Portfolio = (props) => {
             {pric}
         </div>
         <div className='content1'>
-            {parseInt(props.quantity)*parseInt(pric)}
+            {show.toFixed(2)}
         </div>
     </div>
   )

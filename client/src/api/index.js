@@ -14,3 +14,4 @@ export const addstock=(stockdata)=>API.post('/stocks/add',stockdata);
 export const fetchStocks=()=>API.get('/stocks/fetch');
 export const buystock=(info)=>API.post('/user/addstock',info);
 export const sellstock=(info)=>API.post('/user/sellstock',info);
+export const getinfo=(info)=>API.post('/user/getinfo',info);

@@ -90,3 +90,12 @@ module.exports.sellstock=async function(req,res){
         console.log(err);
     }
 }
+module.exports.getinfo=async function(req,res){
+    try{
+        console.log(req.body);
+        const user=await User.findById(req.body.id);
+        return res.status(200).json(user);
+    }catch(err){
+        console.log(err);
+    }
+}

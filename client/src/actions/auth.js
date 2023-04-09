@@ -6,6 +6,11 @@ export const signin=(formData,navigate)=>async(dispatch)=>{
     try{
         const {data}=await api.signin(formData);
         dispatch({type:'AUTH',data});
+        console.log(data);
+        console.log(data.result);
+        const send=data.result;
+        console.log(send);
+        dispatch({type:'SETUSER',send});
         backtohome(navigate);
     }catch(error){
         console.log(error);

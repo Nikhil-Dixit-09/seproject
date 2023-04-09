@@ -4,6 +4,7 @@ import stocks from '../../assets/icons8-stocks-48.png'
 import dollar from '../../assets/icons8-heavy-dollar-sign-48.png'
 import speaker from '../../assets/icons8-speaker-48.png'
 import { useState } from 'react'
+import { getinfo } from '../../actions/user'
 import Portfolio from '../portfolio/portfolio'
 import Mystock from '../../components/Stock/mystock'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,6 +28,13 @@ const Home = () => {
     //     console.log(news);
     //     dispatch(addstock(news))
     // }
+    useEffect(()=>{
+        if(user!==null){
+            var obj={};
+            obj.id=user.result._id;
+            dispatch(getinfo(obj));
+        }
+    },[])
     useEffect(() => {
         dispatch(getStocks());
     }, [dispatch])
@@ -114,14 +122,16 @@ const Home = () => {
                                     Total
                                 </div>
                             </div>
+                            <div>
                             {
-                                user?.result?.stocks.map((stock) => (
+                                myuser?.stocks?.map((stock) => (
                                     <div className='portfolio_item'>
                                         <Portfolio key={stock.name} symbol={stock.name} quantity={stock.value} />
                                     </div>
-
                                 ))
                             }
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
