@@ -13,24 +13,25 @@ module.exports.add=async function(req,res){
 module.exports.fetch=async function(req,res){
     try{
         const stocks=await Stocks.find();
-        
-
-const options = {
-  method: 'GET',
-  url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL/asset-profile',
-  headers: {
-    'X-RapidAPI-Key': '63a4535a9emshcefa45bb7cde36cp1e4eb9jsnb67e30a67489',
-    'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
-  }
-};
-
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
+        // const options = {
+        //     method: 'GET',
+        //     url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/qu/quote/AAPL/financial-data',
+        //     headers: {
+        //       'X-RapidAPI-Key': '2028e79645mshfadfed0ae146e08p14cce4jsncc711a505019',
+        //       'X-RapidAPI-Host': 'yahoo-finance15.p.rapidapi.com'
+        //     }
+        //   };
+          
+        //   axios.request(options).then(function (response) {
+        //       console.log(response.data);
+        //   }).catch(function (error) {
+        //       console.error(error);
+        //   });
+        // const data=await axios.get(`https://api.polygon.io/v2/aggs/ticker/GOOG/prev?adjusted=true&apiKey=GtsiJt2SVbczgdbQaB5jmaOFAJavRU_g`);
+        // console.log(data.data.results)
         return res.status(200).json(stocks);
     }catch(err){
         console.log(err);
     }
+    
 }
