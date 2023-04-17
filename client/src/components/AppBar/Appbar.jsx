@@ -27,7 +27,7 @@ const Appbar = () => {
   return (
     <div className='appbar'>
         <div className='name'>
-            Name of the company
+            Compound Money 
         </div>
 
         <div className='who'>
